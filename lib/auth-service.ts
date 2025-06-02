@@ -1,6 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { db } from "./db";
 
+
 export const getSelf = async () => {
   const self = await currentUser();
 
@@ -17,4 +18,6 @@ export const getSelf = async () => {
   if(!user) {
    throw new Error("Not found");
   }
+
+  return user;
 }
